@@ -6,28 +6,28 @@ export type UserDocument = HydratedDocument<User>;
 
 @Schema()
 export class User {
-  @Prop({
-    type: String,
-    default: function genUUID() {
-      return uuidv4();
-    },
-  })
-  id: string;
+    @Prop({
+        type: String,
+        default: function genUUID() {
+            return uuidv4();
+        },
+    })
+    id: string;
 
-  @Prop({ unique: true })
-  username!: string;
+    @Prop({ unique: true })
+    username!: string;
 
-  @Prop()
-  password!: string;
+    @Prop()
+    password!: string;
 
-  @Prop()
-  firstName!: string;
+    @Prop()
+    firstName!: string;
 
-  @Prop()
-  lastName!: string;
+    @Prop()
+    lastName!: string;
 
-  @Prop()
-  lastSignIn?: string;
+    @Prop()
+    lastSignIn?: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
