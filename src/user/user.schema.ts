@@ -6,9 +6,12 @@ export type UserDocument = HydratedDocument<User>;
 
 @Schema()
 export class User {
-  @Prop({ type: String, default: function genUUID() {
-    return uuidv4();
-  }})
+  @Prop({
+    type: String,
+    default: function genUUID() {
+      return uuidv4();
+    },
+  })
   id: string;
 
   @Prop({ unique: true })
